@@ -90,5 +90,5 @@ class IngestLocal(IngestBase):
             else:
                 return None
         else:
-            self.logger.info(f"File {source_file_path} is already UTF-8. Using as is.")
+            self.logger.info(f"File {source_file_path} is already UTF-8. Using as it is.")
             return source_file_path
