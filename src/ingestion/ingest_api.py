@@ -1,4 +1,3 @@
-# src/ingestion/ingest_api.py
 import requests
 import pandas as pd
 from src.ingestion.ingest import IngestBase
