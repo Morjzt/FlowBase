@@ -44,7 +44,7 @@ class IngestLocal(IngestBase):
             self.df = pd.concat(df_list, ignore_index=True)
             self.logger.info(f"Ingestion complete. Master DataFrame shape: {self.df.shape}")
         else:
-            self.logger.warning("No files found or processed during ingestion.")
+            self.logger.warning("No files were found or processed during the ingestion process.")
 
         return self.df
 
