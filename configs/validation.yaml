@@ -1,0 +1,34 @@
+validation:
+  strict_mode: true
+
+  required_columns:
+    - product_id
+
+  data_types:
+    product_id: string
+    product_name: string
+    quantity_on_hand: integer
+    quantity_sold: integer
+    unit_cost: float
+    selling_price: float
+    revenue: float
+    sale_date: datetime
+
+  ranges:
+    quantity_on_hand:
+      min: 0
+    quantity_sold:
+      min: 0
+    unit_cost:
+      min: 0
+    selling_price:
+      min: 0
+
+  uniqueness:
+    - product_id
+
+  null_policy:
+    product_name: allow
+    unit_cost: allow
+    selling_price: allow
+    quantity_on_hand: forbid

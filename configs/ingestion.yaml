@@ -1,0 +1,43 @@
+# Ingestion configs
+
+
+#s3
+
+s3:
+  bucket_name: "my-company-data"
+  prefix: "inventory/"
+  file_types: ["csv", "parquet"]
+  aws_access_key_id: "YOUR_AWS_ACCESS_KEY"
+  aws_secret_access_key: "YOUR_AWS_SECRET_KEY"
+  region_name: "us-east-1"
+  recursive: true 
+  max_files: 100
+
+
+#Path
+
+local:
+  paths:
+    - "/data/inventory/"
+    - "/data/sales/"
+  file_types: ["csv"]
+  recursive: true
+  encoding: "utf-8"
+
+
+#API
+
+api:
+  endpoints:
+    - url: "https://api.example.com/inventory"
+      auth_type: "bearer"
+      token: "YOUR_API_TOKEN"
+      pagination: true
+      page_param: "page"
+      per_page_param: "per_page"
+      max_pages: 50
+    - url: "https://api.example2.com/products"
+      auth_type: "basic"
+      username: "user"
+      password: "pass"
+      pagination: false

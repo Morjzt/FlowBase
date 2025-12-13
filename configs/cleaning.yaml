@@ -1,0 +1,23 @@
+#Data cleaning rules
+
+cleaning:
+  numeric_columns:
+    - spend_usd
+    - impressions
+    - clicks
+    - conversions
+    - revenue_usd
+    - roas
+  rounding_precision: 2
+  currency_columns:
+    - spend
+    - cost
+    - revenue
+  currency_conversion:
+    USD: 1
+    EUR: 1.1
+    GBP: 1.25
+    CNY: 0.14
+  remove_duplicates: true
+  normalize_text_columns: true
+  batch_size: 1000

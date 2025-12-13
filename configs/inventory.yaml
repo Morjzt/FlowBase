@@ -1,0 +1,96 @@
+inventory:
+  canonical_entities:
+    product:
+      required:
+        - product_id
+        - product_name
+      optional:
+        - sku
+        - brand
+        - category
+        - variant
+        - unit_cost
+        - selling_price
+        - currency
+
+    stock:
+      required:
+        - product_id
+        - quantity_on_hand
+      optional:
+        - warehouse
+        - reorder_level
+        - safety_stock
+        - last_updated
+
+    sales:
+      required:
+        - product_id
+        - quantity_sold
+        - sale_date
+      optional:
+        - channel
+        - revenue
+        - currency
+
+
+#Header and Label normalization.
+
+header_mapping:
+  product_id:
+    - product_id
+    - productid
+    - item_id
+    - itemid
+    - sku_id
+    - sku
+
+  product_name:
+    - product_name
+    - name
+    - item_name
+    - title
+
+  quantity_on_hand:
+    - stock
+    - inventory
+    - qty
+    - quantity
+    - quantity_on_hand
+
+  selling_price:
+    - price
+    - unit_price
+    - selling_price
+    - sale_price
+
+
+#Metrics
+
+header_mapping:
+  product_id:
+    - product_id
+    - productid
+    - item_id
+    - itemid
+    - sku_id
+    - sku
+
+  product_name:
+    - product_name
+    - name
+    - item_name
+    - title
+
+  quantity_on_hand:
+    - stock
+    - inventory
+    - qty
+    - quantity
+    - quantity_on_hand
+
+  selling_price:
+    - price
+    - unit_price
+    - selling_price
+    - sale_price

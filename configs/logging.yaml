@@ -1,0 +1,14 @@
+#Logging/Monitoring
+
+monitoring:
+  log_level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  log_to_file: true
+  log_file_path: "logs/pipeline.log"
+  max_log_size_mb: 10
+  backup_count: 5
+  metrics_to_track:
+    - ingestion_time
+    - cleaned_rows
+    - duplicates_removed
+    - missing_values_imputed
+    - errors
