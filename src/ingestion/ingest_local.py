@@ -5,7 +5,7 @@ from src.ingestion.ingest import IngestBase
 from src.utils.logging import PipeLineLogger
 
 class IngestLocal(IngestBase):
-    def __init__(self):
+    def __init__(self, batch_number=0, chunksize=5000 ):
         self.path = self.config.get("local_path", "./data/raw") 
         self.file_type = self.config.get("file_type", "csv")
         self.recursive = self.config.get("recursive", True) 
@@ -13,6 +13,8 @@ class IngestLocal(IngestBase):
         self.df = None
         self.processed_dir = "./data/processed_temp" 
         os.makedirs(self.processed_dir, exist_ok=True)
+        self.batch_number = batch_number
+        self.chunksize = chunksize
 
 
     def ingest(self) -> pd.DataFrame:
@@ -28,6 +30,8 @@ class IngestLocal(IngestBase):
                         try:
                             if self.file_type == "csv":
                                 df = pd.read_csv(usable_file_path)
+                                self.logger.info(f"Successfully read file: '{usable_file_path}' ({len(df)} rows)")
+                                df_list.append(df)
                             elif self.file_type == "parquet":
                                 df = pd.read_parquet(usable_file_path)
                             
