@@ -63,7 +63,7 @@ class IngestLocal(IngestBase):
                 content = infile.read()
 
             with open(target_path, "w", encoding="utf-8") as outfile:
-                outfile.write(content) # Corrected write method
+                outfile.write(content) 
 
             self.logger.info(f"Successfully converted {source_path} to {target_path}")
             return True
