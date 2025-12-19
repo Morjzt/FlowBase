@@ -29,7 +29,7 @@ local:
 
 api:
   endpoints:
-    - url: "https://api.example.com/inventory"
+    - base_url: "https://api.example.com/inventory"
       auth_type: "bearer"
       token: "YOUR_API_TOKEN"
       pagination: true
